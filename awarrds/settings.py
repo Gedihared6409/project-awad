@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'pyuploadcare.dj',
     'crispy_forms',
      'cloudinary',
+     'bootstrap4',
+     'star_ratings',
 ]
 UPLOADCARE = {
     'pub_key': '2b709bca64245dd9e55e',
