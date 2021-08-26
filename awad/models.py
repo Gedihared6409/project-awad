@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Profile(models.Model):
-    photo = models.ImageField(blank =True,null = True)
+    photo = models.ImageField(default='Blank-Avatar.JPG', blank =True,null = True)
     Bio = models.CharField(max_length=30,blank =True )
     user = models.OneToOneField(User,on_delete=models.CASCADE)
     datecreated= models.DateField(auto_now_add=True,blank =True )

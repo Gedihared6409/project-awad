@@ -4,9 +4,11 @@ from .forms import *
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from .decorators import unauthenticated_user
 def index(request):
     projects = Projects.objects.all()
     return render(request,'index.html',{"projects":projects})
+
 @login_required(login_url='login')
 def addProject(request):
     form = projectForm()
@@ -50,7 +52,7 @@ def registerPage(request):
             return redirect('login')
     context = {'form':form}
     return render(request, 'register.html', context)
-
+@unauthenticated_user
 def loginPage(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -68,3 +70,7 @@ def loginPage(request):
 def logoutUser(request):
 	logout(request)
 	return redirect('index')
+@login_required(login_url='login')
+def profile(request, username):
+    context = {'username':username}
+    return render(request, 'profile.html', context)
