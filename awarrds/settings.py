@@ -44,17 +44,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'awad',
-    'pyuploadcare.dj',
+    'awad', 
     'crispy_forms',
-     'cloudinary',
      'bootstrap4',
      'star_ratings',
 ]
-UPLOADCARE = {
-    'pub_key': '2b709bca64245dd9e55e',
-    'secret': '0a60851de5f3db2dc728',
-}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -149,11 +144,6 @@ USE_L10N = True
 
 USE_TZ = False
 
-cloudinary.config( 
-  cloud_name = "dzvafknwk", 
-  api_key = "792498396853217", 
-  api_secret = "Dr-pc8vOEDpJ_8bXqx0t4GkVqSk" 
-)
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
