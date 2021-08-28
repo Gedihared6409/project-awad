@@ -33,7 +33,7 @@ SECRET_KEY = '^kv_(sn_=u*n059rbx8bs_hc$x*d#((nhnb7ubzq^om3=(@^pv'
 ALLOWED_HOSTS = []
 
 MODE=config("MODE", default="dev")
-SECRET_KEY = config('SECRET_KEY')
+
 DEBUG = config('DEBUG', default=False, cast=bool)
 # Application definition
 
@@ -112,7 +112,7 @@ else:
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
-ALLOWED_HOSTS = ['assets-inventoryy.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['awwards0.herokuapp.com','127.0.0.1']
 
 
 # Password validation
