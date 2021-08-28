@@ -71,6 +71,9 @@ def logoutUser(request):
 	logout(request)
 	return redirect('index')
 @login_required(login_url='login')
-def profile(request, username):
-    context = {'username':username}
+def profile(request, id):
+    user = request.user.id
+    pof = Profile.objects.get_or_create(user_id=id)
+    print(pof)
+    context = {'pof':pof}
     return render(request, 'profile.html', context)
