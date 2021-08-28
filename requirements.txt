@@ -24,4 +24,3 @@ toml==0.10.2
 whitenoise==5.2.0
 wrapt==1.12.1
 cloudinary==1.26.0
-pyuploadcare 2.7.0
